@@ -88,9 +88,9 @@ def update_group(request, pk):
 @api_view(['DELETE'])
 # @permission_required(['delete_group'])
 # @permission_classes([IsAuthenticated])
-def delete_blog(request, slug):
+def delete_group(request, pk):
     try:
-        group = Group.objects.get(slug=slug)
+        group = Group.objects.get(id=pk)
         group.delete()
         return Response({
             'code': status.HTTP_200_OK,
