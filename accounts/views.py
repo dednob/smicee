@@ -54,8 +54,8 @@ def demo(request):
 
 def user_list(request):
     try:
-        group = User.objects.all()
-        serializer = UserSerializer(group, many=True)
+        user = User.objects.all()
+        serializer = UserSerializer(user, many=True)
         return Response({
             'code': status.HTTP_200_OK,
             'response': "Received Data Successfully",
